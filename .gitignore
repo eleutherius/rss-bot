@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#PyCarm
+.idea
 # C extensions
 *.so
 

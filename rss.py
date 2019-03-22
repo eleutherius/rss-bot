@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 #-*- coding: UTF 8 -*-
+import os
 import sys
 import json
 import time
@@ -170,4 +171,17 @@ class ExportBot:
 			logging.info( u'Public: %s;%s;' % (post, message_id))
 			time.sleep(self.delay_between_messages)
 
-
+class base_check:
+	"""
+	Class for checking our database 
+	"""
+	def __init__(self, db_path='./base.db'):
+		if os.path.exists(db_path):
+			if os.path.isfile(db_path):
+				print('File %s exist' % db_path )
+				print('Size:',os.path.getsize(db_path)//1024,'Кб')
+			elif os.path.isdir(db_path):
+				print('DIR')
+				print('List of objects: ',os.listdir(db_path))
+		else:
+			print ('Object not found' )
