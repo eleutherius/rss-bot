@@ -1,0 +1,15 @@
+[Unit]
+Description=RSS-bot service for systemd
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=rss_bot_path/run_app.sh
+Environment=PYTHONUNBUFFERED=1
+Restart=on-abort
+Type=notify
+User=python_demo_service
+
+[Install]
+# WantedBy=multi-user.target
+WantedBy=default.target
