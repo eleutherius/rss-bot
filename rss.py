@@ -11,7 +11,7 @@ import logging
 import binascii
 import telegram
 import traceback
-import feedparser
+import feedparser;
 import configparser
 from datetime import datetime
 from sqlalchemy.orm import mapper
